@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>列表项1</li>
+        <li>列表项2</li>
+        <li>列表项3</li>
+        <p>这是一个段落</p>
+    </ul>
+    <script>
+        // 事件委托：利用事件冒泡，将事件处理函数绑定在父元素上，实现对子元素的事件处理
+        // 事件委托的优势：
+        // 1. 减少事件处理函数的数量，提高性能
+        // 2. 动态添加的元素也可以绑定事件处理函数
+        // 3. 可以实现对多个元素的事件处理，而不需要为每个元素都绑定事件处理函数
+        // 阻止事件冒泡：e.stopPropagation()
+        // 阻止事件默认行为：e.preventDefault()
+        // 示例：
+        const ul = document.querySelector('ul');
+        ul.addEventListener('click', function (e) {
+            // e.target.style.color = 'red'
+            // 只有点击了 li 元素，才会改变颜色
+            if (e.target.tagName === 'LI') {
+                e.target.style.color = 'red';
+            }
+        })
+    </script>
+</body>
+
+</html>
